@@ -1,14 +1,34 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { SkillsModule } from './skills/skills.module';
-
-const connectionUri = `mongodb+srv://root:${process.env.DB_PASS}@ilya-online-cluster-ppatt.mongodb.net/test?retryWrites=true&w=majority`;
+import { SkillModule } from './skill';
+import { databaseProviders } from './db/database.providers';
+import { DatabaseModule } from './db/database.module';
 
 @Module({
-  imports: [SkillsModule, MongooseModule.forRoot(connectionUri)],
+  imports: [
+    /*
+    Custom modules
+     */
+    SkillModule,
+
+    /*
+    Database
+     */
+    DatabaseModule,
+
+    /*
+    Config
+     */
+    ConfigModule.forRoot({
+      isGlobal: true,
+      // TODO: add Joi validation
+      // validationSchema: ...
+    }),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
