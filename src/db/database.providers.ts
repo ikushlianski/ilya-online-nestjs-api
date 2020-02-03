@@ -15,7 +15,7 @@ export const databaseProviders = [
       const uri = `mongodb+srv://${dbUser}:${dbPassword}@ilya-online-cluster-ppatt.mongodb.net/test?retryWrites=true&w=majority`;
 
       return await mongoose.connect(uri, {
-        dbName: 'ilya-online',
+        dbName: configService.get('DATABASE_NAME'),
         useNewUrlParser: true,
       });
     },

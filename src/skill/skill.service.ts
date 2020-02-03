@@ -14,4 +14,8 @@ export class SkillService {
   async findAll(): Promise<Skill[]> {
     return await this.skillModel.find().exec();
   }
+
+  async create(skill) {
+    return await this.skillModel.create(skill);
+  }
 }
