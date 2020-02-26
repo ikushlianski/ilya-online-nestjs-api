@@ -7,6 +7,7 @@ import { AppService } from './app.service';
 import { SkillModule } from './skill';
 import { databaseProviders } from './db/database.providers';
 import { DatabaseModule } from './db/database.module';
+import { JobModule } from './job';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { DatabaseModule } from './db/database.module';
     Custom modules
      */
     SkillModule,
+    JobModule,
 
     /*
     Database

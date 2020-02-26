@@ -1,6 +1,5 @@
 import { Model } from 'mongoose';
 import { Inject, Injectable } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
 
 import { Skill } from './skill.interface';
 import { SKILL_MODEL_PROVIDER } from '../db/constants';
