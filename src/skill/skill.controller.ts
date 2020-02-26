@@ -14,6 +14,11 @@ export class SkillController {
     return this.skillService.findAll();
   }
 
+  @Get('/skills/top')
+  getTopSkills() {
+    return this.skillService.findTopSkills();
+  }
+
   @Post('/skills')
   @UsePipes(new JoiValidationPipe(schema))
   createSkill(@Body() createSkillDto: Skill) {

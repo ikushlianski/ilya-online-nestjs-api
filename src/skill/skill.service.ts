@@ -14,6 +14,10 @@ export class SkillService {
     return await this.skillModel.find().exec();
   }
 
+  async findTopSkills(): Promise<Skill[]> {
+    return await this.skillModel.find({ top: true }).exec();
+  }
+
   async create(skill) {
     return await this.skillModel.create(skill);
   }
