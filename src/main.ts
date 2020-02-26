@@ -4,11 +4,12 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const configService = app.get('ConfigService');
+
   app.enableCors({
-    // in reality should be kinda FRONTEND_URL from .env
-    origin: '*',
+    origin: configService.get('FRONTEND_URL'),
   });
 
-  await app.listen(3001);
+  await app.listen(configService.get('PORT'));
 }
 bootstrap();
