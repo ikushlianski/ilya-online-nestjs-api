@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { SkillModule } from './skill';
 import { DatabaseModule } from './db/database.module';
 import { JobModule } from './job';
+import { CvModule } from './cv';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { JobModule } from './job';
      */
     SkillModule,
     JobModule,
+    CvModule,
 
     /*
     Database

@@ -14,5 +14,5 @@ export interface Skill extends Document {
   readonly workedWith: Array<string>;
   readonly yetToLearn: Array<string>;
   readonly image: string;
-  readonly cv: boolean;
+  readonly cv: string;
 }

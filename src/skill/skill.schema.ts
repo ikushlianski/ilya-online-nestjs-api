@@ -12,5 +12,5 @@ export const SkillSchema = new mongoose.Schema({
   workedWith: Array,
   yetToLearn: Array,
   image: String,
-  cv: Boolean,
+  cv: String,
 });
