@@ -7,6 +7,7 @@ import { SkillModule } from './skill';
 import { DatabaseModule } from './db/database.module';
 import { JobModule } from './job';
 import { CvModule } from './cv';
+import { WorkModule } from './work';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { CvModule } from './cv';
     SkillModule,
     JobModule,
     CvModule,
+    WorkModule,
 
     /*
     Database
@@ -27,8 +29,7 @@ import { CvModule } from './cv';
      */
     ConfigModule.forRoot({
       isGlobal: true,
-      // TODO: add Joi validation
-      // validationSchema: ...
+      // validationSchemas could be here...
     }),
   ],
   controllers: [AppController],
